@@ -77,6 +77,6 @@ class BigDayViewController: UIViewController {
             daysLeftLabel.text = "0"
             daysRightLabel.text = "0"
         }
-        bigDayArrivedLabel.hidden = !bigDayArrived
+        bigDayArrivedLabel.text = bigDayArrived ? "The Big Day Has Arrived!!!" : "Until our big day!"
     }
 }
