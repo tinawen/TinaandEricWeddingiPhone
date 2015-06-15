@@ -44,9 +44,8 @@ class SelectPersonViewController: UITableViewController, UITableViewDataSource, 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let name: String = namesToSelect![indexPath.row]
         let hasLoginKey = NSUserDefaults.standardUserDefaults().boolForKey("hasLoginKey")
-        let keychainWrapper = KeychainWrapper()
-        keychainWrapper.mySetObject(name, forKey:kSecValueData)
-        keychainWrapper.writeToKeychain()
+        let keychainItemWrapper = KeychainItemWrapper(identifier: "username", accessGroup: nil)
+        keychainItemWrapper.setObject(name, forKey:kSecValueData)
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "hasLoginKey")
         NSUserDefaults.standardUserDefaults().synchronize()
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

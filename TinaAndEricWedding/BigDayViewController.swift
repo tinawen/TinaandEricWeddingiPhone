@@ -24,7 +24,19 @@ class BigDayViewController: UIViewController {
 
     @IBOutlet weak var secsRightLabel: UILabel!
     
+    @IBOutlet weak var notMeButton: UIButton!
+    
+    @IBOutlet weak var welcomeTextLabel: UILabel!
     @IBOutlet weak var bigDayArrivedLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let keychainWrapper = KeychainItemWrapper(identifier: "username", accessGroup: nil)
+        let name = keychainWrapper.objectForKey(kSecValueData) as? String
+        welcomeTextLabel.text = "Welcome \(name!)"
+        notMeButton.setTitle("Not \(name!)?", forState: .Normal)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         updateTimeRemainingToBigDay()
@@ -34,6 +46,16 @@ class BigDayViewController: UIViewController {
     override func viewWillDisappear(animated: Bool) {
         timer?.invalidate()
         self.timer = nil
+    }
+    
+    @IBAction func logoutButtonClicked(sender: AnyObject) {
+        let keychainWrapper = KeychainItemWrapper(identifier: "username", accessGroup: nil)
+        keychainWrapper.resetKeychainItem()
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "hasLoginKey")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        var loginController = mainStoryboard.instantiateViewControllerWithIdentifier("login") as! UIViewController
+        UIApplication.sharedApplication().keyWindow!.rootViewController = loginController;
     }
     
     func updateTimeRemainingToBigDay() {

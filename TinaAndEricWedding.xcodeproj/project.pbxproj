@@ -18,7 +18,6 @@
 		2608A5571B2CEA3E00271B36 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2608A54D1B2CEA3E00271B36 /* ParseFacebookUtils.framework */; };
 		2608A5581B2CEA3E00271B36 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2608A54E1B2CEA3E00271B36 /* ParseUI.framework */; };
 		261C89191B2D3D2800582B20 /* SelectPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C89181B2D3D2800582B20 /* SelectPersonViewController.swift */; };
-		261C891E1B2D3D9100582B20 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 261C891D1B2D3D9100582B20 /* KeychainWrapper.m */; };
 		261C89231B2D3E1C00582B20 /* AppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 261C891F1B2D3E1C00582B20 /* AppIcon.png */; };
 		261C89241B2D3E1C00582B20 /* events@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 261C89201B2D3E1C00582B20 /* events@2x.png */; };
 		261C89251B2D3E1C00582B20 /* mobile_cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 261C89211B2D3E1C00582B20 /* mobile_cover.png */; };
@@ -33,6 +32,7 @@
 		264137F81B2E29030043B897 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264137F71B2E29030043B897 /* EventsViewController.swift */; };
 		264137FA1B2E38BE0043B897 /* BigDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264137F91B2E38BE0043B897 /* BigDayViewController.swift */; };
 		264137FC1B2E39C10043B897 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264137FB1B2E39C10043B897 /* DateHelper.swift */; };
+		264137FF1B2E605F0043B897 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 264137FE1B2E605F0043B897 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		266901D61B2D4DED00E5159D /* venue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 266901D51B2D4DED00E5159D /* venue@2x.png */; };
 		266901D81B2D581600E5159D /* calendarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 266901D71B2D581600E5159D /* calendarButton@2x.png */; };
 		267F0DF01B2D3FD6001769BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 267F0DEF1B2D3FD6001769BC /* Main.storyboard */; };
@@ -67,8 +67,6 @@
 		2608A54E1B2CEA3E00271B36 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		261C89181B2D3D2800582B20 /* SelectPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectPersonViewController.swift; sourceTree = "<group>"; };
 		261C891B1B2D3D9000582B20 /* TinaAndEricWedding-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TinaAndEricWedding-Bridging-Header.h"; sourceTree = "<group>"; };
-		261C891C1B2D3D9100582B20 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainWrapper.h; path = KeychainWrapper/KeychainWrapper.h; sourceTree = SOURCE_ROOT; };
-		261C891D1B2D3D9100582B20 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainWrapper.m; path = KeychainWrapper/KeychainWrapper.m; sourceTree = SOURCE_ROOT; };
 		261C891F1B2D3E1C00582B20 /* AppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AppIcon.png; path = Resources/AppIcon.png; sourceTree = "<group>"; };
 		261C89201B2D3E1C00582B20 /* events@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "events@2x.png"; path = "Resources/events@2x.png"; sourceTree = "<group>"; };
 		261C89211B2D3E1C00582B20 /* mobile_cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mobile_cover.png; path = Resources/mobile_cover.png; sourceTree = "<group>"; };
@@ -83,6 +81,8 @@
 		264137F71B2E29030043B897 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		264137F91B2E38BE0043B897 /* BigDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BigDayViewController.swift; sourceTree = "<group>"; };
 		264137FB1B2E39C10043B897 /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		264137FD1B2E605F0043B897 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KeychainItemWrapper.h; path = KeychainWrapper/KeychainItemWrapper.h; sourceTree = SOURCE_ROOT; };
+		264137FE1B2E605F0043B897 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KeychainItemWrapper.m; path = KeychainWrapper/KeychainItemWrapper.m; sourceTree = SOURCE_ROOT; };
 		266901D51B2D4DED00E5159D /* venue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "venue@2x.png"; path = "Resources/venue@2x.png"; sourceTree = "<group>"; };
 		266901D71B2D581600E5159D /* calendarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "calendarButton@2x.png"; path = "Resources/calendarButton@2x.png"; sourceTree = "<group>"; };
 		267F0DEF1B2D3FD6001769BC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -149,8 +149,8 @@
 				264137FB1B2E39C10043B897 /* DateHelper.swift */,
 				2608A52C1B2CC47300271B36 /* Images.xcassets */,
 				2608A52E1B2CC47300271B36 /* LaunchScreen.xib */,
-				261C891C1B2D3D9100582B20 /* KeychainWrapper.h */,
-				261C891D1B2D3D9100582B20 /* KeychainWrapper.m */,
+				264137FD1B2E605F0043B897 /* KeychainItemWrapper.h */,
+				264137FE1B2E605F0043B897 /* KeychainItemWrapper.m */,
 				2608A5211B2CC47300271B36 /* Supporting Files */,
 				261C891B1B2D3D9000582B20 /* TinaAndEricWedding-Bridging-Header.h */,
 			);
@@ -338,12 +338,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				261C89191B2D3D2800582B20 /* SelectPersonViewController.swift in Sources */,
-				261C891E1B2D3D9100582B20 /* KeychainWrapper.m in Sources */,
 				2608A5481B2CCC2200271B36 /* LoginViewController.swift in Sources */,
 				2608A5241B2CC47300271B36 /* AppDelegate.swift in Sources */,
 				264137FA1B2E38BE0043B897 /* BigDayViewController.swift in Sources */,
 				264137FC1B2E39C10043B897 /* DateHelper.swift in Sources */,
 				264137F81B2E29030043B897 /* EventsViewController.swift in Sources */,
+				264137FF1B2E605F0043B897 /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

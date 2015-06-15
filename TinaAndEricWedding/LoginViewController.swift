@@ -23,9 +23,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             hasCheckedCred = true
             if let hasLoggedIn = NSUserDefaults.standardUserDefaults().valueForKey("hasLoginKey") as? Bool {
                 if hasLoggedIn {
-                    let keychainWrapper = KeychainWrapper()
-                    let name = keychainWrapper.myObjectForKey("v_Data") as? String
-                    print("person who should log in is \(name)")
+                    let keychainWrapper = KeychainItemWrapper(identifier: "username", accessGroup: nil)
+                    let name = keychainWrapper.objectForKey(kSecValueData) as? String
                     let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     var tabController = mainStoryboard.instantiateViewControllerWithIdentifier("tab") as! UITabBarController
                     UIApplication.sharedApplication().keyWindow!.rootViewController = tabController;
@@ -64,17 +63,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         print("name is \(name)")
                         names.append(name)
                     }
-                }
-                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                var navController = mainStoryboard.instantiateViewControllerWithIdentifier("nav") as! UINavigationController
-                UIApplication.sharedApplication().keyWindow!.rootViewController = navController;
-                if let selectPeopleViewController = navController.topViewController as? SelectPersonViewController {
-                    selectPeopleViewController.namesToSelect = names
                 } else {
                     // display code invalid
                     var alert = UIAlertController(title: "Your code is invalid", message: "Please check your email for the correct code", preferredStyle: UIAlertControllerStyle.Alert)
                     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
                     self.presentViewController(alert, animated: true, completion: nil)
+                    return
+                }
+
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                var navController = mainStoryboard.instantiateViewControllerWithIdentifier("nav") as! UINavigationController
+                UIApplication.sharedApplication().keyWindow!.rootViewController = navController;
+                if let selectPeopleViewController = navController.topViewController as? SelectPersonViewController {
+                    selectPeopleViewController.namesToSelect = names
                 }
             } else {
                 println("Error in retrieving \(error)")
